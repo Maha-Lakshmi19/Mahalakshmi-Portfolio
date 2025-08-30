@@ -10,6 +10,7 @@ import portfolioImg from "../assets/portfoilo.png";
 import ArchitectureImg from "../assets/architecture.png";
 import MukeshImg from "../assets/mukeshortho.png";
 
+
 const projects = [
   {
     title: "Portfolio Website",

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import SectionHeading from "../Component/SectionHeading";
 
 // Import your screenshots (replace with real paths)
-import portfolioImg from "../assets/example_project_screen.png";
+import portfolioImg from "../assets/portfolio.png";
 import ArchitectureImg from "../assets/architecture.png";
 import MukeshImg from "../assets/mukeshortho.png";
 

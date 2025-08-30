@@ -17,7 +17,7 @@ const projects = [
       "Built a responsive personal portfolio using React.js, Tailwind CSS, and AOS animations.",
     tech: ["React.js", "Tailwind CSS", "AOS"],
     live: "#", // replace later with Netlify link
-    github: "#", // replace later with GitHub link
+    github: "https://github.com/Maha-Lakshmi19/Maha-Portfolio", // replace later with GitHub link
     image: portfolioImg,
   },
   {

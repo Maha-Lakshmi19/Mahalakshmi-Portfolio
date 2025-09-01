@@ -139,7 +139,7 @@ const Hero = () => {
 
         {/* Right Side - Image */}
         <div
-          className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 mb-8 md:mb-0"
+          className="relative w-40 h-40 sm:w-60 sm:h-56 md:w-80 md:h-80 mb-8 md:mb-0"
           data-aos="fade-left"
           data-aos-delay="700"
         >
@@ -148,14 +148,14 @@ const Hero = () => {
             className="absolute inset-1 sm:inset-2 rounded-full 
                        bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 
                        blur-xl sm:blur-2xl opacity-70 
-                       animate-[pulse_6s_ease-in-out_infinite]"
+                       md:animate-[pulse_6s_ease-in-out_infinite]"
           ></div>
 
           {/* Main Image */}
           <img
             src={img}
             alt="Mahalakshmi Frontend Developer"
-            className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 
+            className="relative w-40 h-40 sm:w-60 sm:h-56 md:w-80 md:h-80 
                        object-cover rounded-full border-4 border-white 
                        shadow-xl z-10 animate-subtle-bounce"
           />

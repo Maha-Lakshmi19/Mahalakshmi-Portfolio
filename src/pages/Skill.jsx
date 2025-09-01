@@ -4,45 +4,55 @@ import "aos/dist/aos.css";
 import { motion } from "framer-motion";
 import { FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaGitAlt } from "react-icons/fa";
 import { SiJavascript, SiTailwindcss, SiGithub } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+
 import SectionHeading from "../Component/SectionHeading";
 
 const Skills = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000, once:false });
+    AOS.init({ duration: 1000, once: false });
   }, []);
 
   // Frontend Skills
   const frontendSkills = [
-    { name: "HTML", icon: <FaHtml5 className="text-orange-500 text-5xl" />, level: "90%" },
-    { name: "CSS", icon: <FaCss3Alt className="text-blue-500 text-5xl" />, level: "85%" },
-    { name: "JavaScript", icon: <SiJavascript className="text-yellow-400 text-5xl" />, level: "80%" },
-    { name: "React.js", icon: <FaReact className="text-cyan-400 text-5xl" />, level: "75%" },
-    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400 text-5xl" />, level: "85%" },
-    { name: "Bootstrap", icon: <FaBootstrap className="text-purple-500 text-5xl" />, level: "80%" },
+    { name: "HTML", icon: <FaHtml5 className="text-orange-500 text-5xl" />, level: "Advanced" },
+    { name: "CSS", icon: <FaCss3Alt className="text-blue-500 text-5xl" />, level: "Advanced" },
+    { name: "JavaScript", icon: <SiJavascript className="text-yellow-400 text-5xl" />, level: "Intermediate" },
+    { name: "React.js", icon: <FaReact className="text-cyan-400 text-5xl" />, level: "Intermediate" },
+    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400 text-5xl" />, level: "Advanced" },
+    { name: "Bootstrap", icon: <FaBootstrap className="text-purple-500 text-5xl" />, level: "Intermediate" },
   ];
 
   // Tools
   const tools = [
-    { name: "Git", icon: <FaGitAlt className="text-red-500 text-5xl" />, level: "70%" },
-    { name: "GitHub", icon: <SiGithub className="text-gray-300 text-5xl" />, level: "70%" },
+    { name: "Git", icon: <FaGitAlt className="text-red-500 text-5xl" />, level: "Intermediate" },
+    { name: "GitHub", icon: <SiGithub className="text-gray-300 text-5xl" />, level: "Intermediate" },
+    { name: "VS Code", icon: <VscVscode className="text-blue-400 text-5xl" />, level: "Advanced" },
   ];
 
-  // Progress bar component with animation
-  const ProgressBar = ({ level }) => (
+  // Reusable Card Component
+  const SkillCard = ({ item, delay }) => (
     <motion.div
-      initial={{ width: 0 }}
-      whileInView={{ width: level }}
-      transition={{ duration: 1.2, ease: "easeInOut" }}
-      viewport={{ once: true }}
-      className="bg-cyan-400 h-2 rounded-full"
-    />
+      className="flex flex-col items-center p-6 bg-[#112240] rounded-xl 
+                 shadow-md transition-all duration-300 ease-in-out
+                 hover:shadow-cyan-400/60 hover:shadow-xl hover:border 
+                 hover:border-cyan-400/50"
+      data-aos="zoom-in"
+      data-aos-delay={delay}
+      whileHover={{ scale: 1.08, rotateX: 4, rotateY: -4 }}
+      transition={{ type: "spring", stiffness: 200, damping: 12 }}
+    >
+      {item.icon}
+      <h4 className="text-lg font-semibold mt-3">{item.name}</h4>
+      <p className="text-gray-400 text-sm">{item.level}</p>
+    </motion.div>
   );
 
   return (
     <section id="skills" className="bg-[#0a192f] text-white px-6 py-20">
       <div className="max-w-5xl mx-auto text-center">
         {/* Title */}
-         <SectionHeading title="My" highlight="Skills" />
+        <SectionHeading title="My" highlight="Skills" />
 
         {/* Intro */}
         <p
@@ -50,10 +60,11 @@ const Skills = () => {
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          Proficient in building responsive and modern web applications using
-          <span className="text-cyan-400"> React.js, JavaScript (ES6+), Tailwind CSS,</span> and
-          <span className="text-cyan-400"> Bootstrap</span>. Experienced in version control and
-          collaboration with <span className="text-cyan-400">Git & GitHub</span>.
+          Skilled in building responsive and modern web applications with
+          <span className="text-cyan-400"> React.js, JavaScript (ES6+), Tailwind CSS</span>, and
+          <span className="text-cyan-400"> Bootstrap</span>. Experienced in
+          version control & collaboration using{" "}
+          <span className="text-cyan-400">Git, GitHub, and VS Code</span>.
         </p>
 
         {/* Frontend Skills */}
@@ -63,25 +74,9 @@ const Skills = () => {
         >
           Frontend Development
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-16">
           {frontendSkills.map((skill, i) => (
-            <motion.div
-              key={i}
-              className="flex flex-col items-start p-6 bg-[#112240] rounded-xl shadow-md hover:shadow-cyan-400/30 transition"
-              data-aos="zoom-in"
-              data-aos-delay={i * 100}
-              whileHover={{ scale: 1.05, rotateX: 5, rotateY: -5 }}
-              transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            >
-              <div className="flex items-center space-x-4 mb-3">
-                {skill.icon}
-                <h4 className="text-lg font-semibold">{skill.name}</h4>
-              </div>
-              <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
-                <ProgressBar level={skill.level} />
-              </div>
-              <p className="text-cyan-400 mt-2">{skill.level}</p>
-            </motion.div>
+            <SkillCard key={i} item={skill} delay={i * 100} />
           ))}
         </div>
 
@@ -92,25 +87,9 @@ const Skills = () => {
         >
           Tools & Version Control
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {tools.map((tool, i) => (
-            <motion.div
-              key={i}
-              className="flex flex-col items-start p-6 bg-[#112240] rounded-xl shadow-md hover:shadow-cyan-400/30 transition"
-              data-aos="zoom-in"
-              data-aos-delay={i * 100}
-              whileHover={{ scale: 1.05, rotateX: 5, rotateY: -5 }}
-              transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            >
-              <div className="flex items-center space-x-4 mb-3">
-                {tool.icon}
-                <h4 className="text-lg font-semibold">{tool.name}</h4>
-              </div>
-              <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
-                <ProgressBar level={tool.level} />
-              </div>
-              <p className="text-cyan-400 mt-2">{tool.level}</p>
-            </motion.div>
+            <SkillCard key={i} item={tool} delay={i * 100} />
           ))}
         </div>
       </div>
@@ -119,6 +98,10 @@ const Skills = () => {
 };
 
 export default Skills;
+
+
+
+
 
 
 

@@ -23,7 +23,7 @@ const Hero = () => {
       <div
         id="hero"
         className="flex flex-col-reverse md:flex-row items-center justify-center 
-                   gap-10 md:gap-16 min-h-screen bg-[#0a192f] px-4 sm:px-6 md:px-10"
+                   gap-10 md:gap-16 min-h-screen bg-[#0a192f] px-4 sm:px-4 md:px-10"
       >
         {/* Left Side - Text */}
         <div className="text-white w-full md:w-1/2 space-y-6 text-center md:text-left">
@@ -139,7 +139,7 @@ const Hero = () => {
 
         {/* Right Side - Image */}
         <div
-          className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 mb-8 md:mb-0"
+          className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 mb-8 md:mb-0 "
           data-aos="fade-left"
           data-aos-delay="700"
         >

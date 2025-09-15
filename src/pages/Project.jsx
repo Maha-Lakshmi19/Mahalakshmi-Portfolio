@@ -8,7 +8,7 @@ import SectionHeading from "../Component/SectionHeading";
 // Import your screenshots (replace with real paths)
 import portfolioImg from "../assets/portfoilo.png";
 import ArchitectureImg from "../assets/architecture.png";
-import MukeshImg from "../assets/mukeshortho.png";
+// import MukeshImg from "../assets/mukeshortho.png";
 
 const projects = [
   {
@@ -20,15 +20,15 @@ const projects = [
     github: "https://github.com/Maha-Lakshmi19/Maha-Portfolio",
     image: portfolioImg,
   },
-  {
-    title: "Clinic Website (Mukesh Ortho)",
-    description:
-      "Developed a clinic website using React.js and Tailwind CSS with form validation and a responsive UI.",
-    tech: ["React.js", "Tailwind CSS"],
-    live: "https://mukeshortho.digitaly.live/",
-    github: "https://github.com/DigitalyAiTech/mukesh_ortho",
-    image: MukeshImg,
-  },
+  // {
+  //   title: "Clinic Website (Mukesh Ortho)",
+  //   description:
+  //     "Developed a clinic website using React.js and Tailwind CSS with form validation and a responsive UI.",
+  //   tech: ["React.js", "Tailwind CSS"],
+  //   live: "https://mukeshortho.digitaly.live/",
+  //   github: "https://github.com/DigitalyAiTech/mukesh_ortho",
+  //   image: MukeshImg,
+  // },
   {
     title: "Static Landing Page",
     description:
